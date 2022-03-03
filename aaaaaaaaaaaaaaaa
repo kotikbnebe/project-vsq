@@ -1,12 +1,3 @@
-local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/bacon"))()
-local version, changelog = lib:GetInfo()
-local window = lib:CreateWindow("stamina editer "..version)
-local label = lib:CreateLabel(window, "Main")
-
-local toggled = false
-local toggle = lib:CreateToggle(window, "loop stamina", false, function(toggleState)
-    toggled = not toggled
-    while toggled and game:GetService('RunService').Heartbeat:Wait() do
-        game:GetService("Workspace").noob.StaminaValues.Stamina.Value = 9879789
-    end
-end)
+return {
+"B6DA9B20-324D-4FFF-BB07-F866518418B8"
+}
