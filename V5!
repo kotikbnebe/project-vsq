@@ -1,6 +1,6 @@
   game.StarterGui:SetCore("SendNotification",{
-        Title = "The script will be fully finished at april 10 or 5 - 10";
-        Text = "zxc";
+        Title = "zxc";
+        Text = "the script will be fully finished at april 5 - 15";
     })
     
  game.StarterGui:SetCore("SendNotification",{
