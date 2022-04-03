@@ -1,3 +1,12 @@
+  game.StarterGui:SetCore("SendNotification",{
+        Title = "The script will be fully finished at april 10 or 5 - 10";
+        Text = "zxc";
+    })
+    
+ game.StarterGui:SetCore("SendNotification",{
+        Title = "V5 release finally";
+        Text = "also again: DONT USE KILL CHARAS ITS NOT FINISHED";
+    })
 _, Protected_by_MoonSecV2, Discord = 'discord.gg/gQEH2uZxUk'
 
 
