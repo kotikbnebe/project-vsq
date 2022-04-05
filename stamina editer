@@ -6,6 +6,6 @@ local toggled = false
 local toggle = lib:CreateToggle(window, "loop stamina", false, function(toggleState)
     toggled = not toggled
     while toggled and game:GetService('RunService').Heartbeat:Wait() do
-        game:GetService("Workspace").Freaazyyy.StaminaValues.Stamina.Value = 9999999999
+        game:GetService("Workspace").rioi24895.StaminaValues.Stamina.Value = 9999999999
     end
 end)
