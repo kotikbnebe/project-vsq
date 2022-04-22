@@ -126,7 +126,7 @@ game.ReplicatedStorage:FindFirstChild(".gg/untitledhood"):FireServer(
 ) 
 end)
 
-Section:NewButton("-500 armor", "", function()
+Section:NewButton("-inf armor armor", "", function()
 
 game.ReplicatedStorage:FindFirstChild(".gg/untitledhood"):FireServer(
     "Reload",
@@ -135,14 +135,14 @@ game.ReplicatedStorage:FindFirstChild(".gg/untitledhood"):FireServer(
         Parent = Game.Players.LocalPlayer.Backpack,
         ClassName = "Tool",
         Ammo = game:GetService("Workspace").Players[_G.Aiden].Information.Armor,
-        MaxAmmo = {Value = -500},
+        MaxAmmo = {Value = -9999999999999999},
         GunScript = game:GetService("Players").LocalPlayer.Backpack["[Revolver]"].GunScript,
         Handle = game:GetService("Players").LocalPlayer.Backpack["[Revolver]"].Handle
     }
 ) 
 end)
 
-Section:NewButton("0 muscle", "", function()
+Section:NewButton("-889999 muscle", "", function()
 
 game.ReplicatedStorage:FindFirstChild(".gg/untitledhood"):FireServer(
     "Reload",
@@ -151,7 +151,7 @@ game.ReplicatedStorage:FindFirstChild(".gg/untitledhood"):FireServer(
         Parent = Game.Players.LocalPlayer.Backpack,
         ClassName = "Tool",
         Ammo = game:GetService("Players")[_G.Aiden].DataFolder.Information.MuscleInformation,
-        MaxAmmo = {Value = 0},
+        MaxAmmo = {Value = -889999},
         GunScript = game:GetService("Players").LocalPlayer.Backpack["[Revolver]"].GunScript,
         Handle = game:GetService("Players").LocalPlayer.Backpack["[Revolver]"].Handle
     }
