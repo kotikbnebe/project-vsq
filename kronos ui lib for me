@@ -44,7 +44,7 @@ function dragify(Frame)
 end
 
 for i,v in pairs(game.CoreGui:GetChildren()) do
-    if v.Name == "Kronos" then 
+    if v.Name == "vsq_v6" then 
         v:Destroy()
     end
 end
@@ -55,14 +55,14 @@ function library:Window(options)
     local Logo = options.Logo or '3610245066'
     local Toggle_Key = options.ToggleKey or Enum.KeyCode.LeftBracket
 
-    local Kronos = Instance.new("ScreenGui")
-    Kronos.Name = "Kronos"
-    Kronos.Parent = game.CoreGui
-    Kronos.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    local vsq_v6 = Instance.new("ScreenGui")
+    vsq_v6.Name = "vsq_v6"
+    vsq_v6.Parent = game.CoreGui
+    vsq_v6.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     local Mover = Instance.new("Frame")
     Mover.Name = "Mover"
-    Mover.Parent = Kronos
+    Mover.Parent = vsq_v6
     Mover.BackgroundColor3 = Color3.fromRGB(44, 43, 48)
     Mover.BackgroundTransparency = 1.000
     Mover.BorderSizePixel = 0
