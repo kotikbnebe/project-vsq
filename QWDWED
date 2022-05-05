@@ -13,7 +13,7 @@ local Settings = {
 
 local SelectedPart = "Head"
 local Prediction = true
-local PredictionValue = mylock_globalp_pred
+local PredictionValue = 0.165
 
 
     local AnchorCount = 0
@@ -22,7 +22,7 @@ local PredictionValue = mylock_globalp_pred
     local CC = game:GetService"Workspace".CurrentCamera
     local Plr;
     local enabled = false
-    local accomidationfactor = mylock_accfactor_pred
+    local accomidationfactor = PredictionValue.Value
     local mouse = game.Players.LocalPlayer:GetMouse()
     local placemarker = Instance.new("Part", game.Workspace)
 
