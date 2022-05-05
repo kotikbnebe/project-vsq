@@ -1,12 +1,12 @@
 getgenv().Target = true
 getgenv().Key = Enum.KeyCode.Q
-getgenv().Prediction = prediction
+getgenv().Prediction = kylos_prediction
 getgenv().ChatMode = false
 getgenv().NotifMode = true
 getgenv().PartMode = true
 getgenv().AirshotFunccc = true
 getgenv().Partz = "HumanoidRootPart"
-getgenv().AutoPrediction = true
+getgenv().AutoPrediction = false
 --
     _G.Types = {
         Ball = Enum.PartType.Ball,
