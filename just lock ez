@@ -1,6 +1,6 @@
 getgenv().Target = true
 getgenv().Key = Enum.KeyCode.Q
-getgenv().Prediction = kylos_prediction
+getgenv().Prediction = 0.165
 getgenv().ChatMode = false
 getgenv().NotifMode = true
 getgenv().PartMode = true
