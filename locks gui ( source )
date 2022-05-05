@@ -1,0 +1,38 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/cat"))()
+local Window = Library:CreateWindow("Locks", Vector2.new(492, 598), Enum.KeyCode.RightShift)
+local MainLocksTab = Window:CreateTab("Main")
+local LocksSector = MainLocksTab:CreateSector("Locks", "left")
+
+LocksSector:AddLabel('kotikbnebe made this')
+
+LocksSector:AddButton('15X Crack', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kotikbnebe/project-vsq-old/main/15x%20crack"))()
+end)
+
+LocksSector:AddButton('Kylos/nn lock', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kotikbnebe/project-vsq-old/main/just%20lock%20ez"))()
+end)
+
+LocksSector:AddButton('noobs lock', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kotikbnebe/project-vsq-old/main/QWDWED"))()
+end)
+
+LocksSector:AddButton('nn tracer lock', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kotikbnebe/project-vsq-old/main/nn%20tracer%20lock"))()
+end)
+
+LocksSector:AddButton('red dot lock', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kotikbnebe/project-vsq-old/main/random%20red%20dot%20lock"))()
+end)
+
+LocksSector:AddButton('nn tracer lock', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kotikbnebe/project-vsq-old/main/nn%20tracer%20lock"))()
+end)
+
+LocksSector:AddButton('swag mode crash', function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SuperCustomServerCrasher'))()
+end)
+
+LocksSector:AddButton('thusky new/old lock', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/kotikbnebe/project-vsq-old/main/thusky%20lock%20new%20or%20oldk"))()
+end)
