@@ -1,0 +1,41 @@
+local sex = game.Workspace
+local dick = game.ReplicatedStorage
+local nigger = game.Players.LocalPlayer
+
+if sex.NightmareSans then
+sex.NightmareSans.NightmareSans.Head.Size = Vector3.new(100, 100, 100)
+else
+print("Error! There is no NightmareSans in Workspace!")
+end
+
+if sex.KillerSans then
+sex.KillerSans.Head.Size = Vector3.new(100, 100, 100)
+else
+print("Error! There is no KillerSans in Workspace!")
+end
+
+if sex.DustSans then
+sex.DustSans.Head.Size = Vector3.new(100, 100, 100)
+else
+print("Error! There is no DustSans in Workspace!")
+end
+
+if sex.HorrorSans then
+sex.HorrorSans.Head.Size = Vector3.new(100, 100, 100)
+else
+print("Error! There is no HorrorSans in Workspace!")
+end
+
+if sex.MTT.KillerSans then
+sex.MTT.KillerSans.Head.Size = Vector3.new(100, 100, 100)
+else
+print("Error! There is no KillerSans in Workspace!")
+end
+
+if sex.MTT.DustSans then
+sex.MTT.DustSans.Head.Size = Vector3.new(100, 100, 100)
+else
+print("Error! There is no DustSans in Workspace!")
+end
+
+print("soon")
