@@ -5,3 +5,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/kotikbnebe/project-vs
 
 
 v1
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kotikbnebe/project-vsq/main/blood%20killer%20v1"))()
