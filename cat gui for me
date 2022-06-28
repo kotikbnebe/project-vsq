@@ -3514,7 +3514,7 @@ function library:CreateWindow(name, size, hidebutton)
 
                 if (not Config:Get() or Config:Get() == "") then return end
                 if (not isfile(configSystem.configFolder .. "/" .. Config:Get() .. ".bat")) then return end
-                delfile(configSystem.configFolder .. "/" .. Config:Get() .. ".bat)
+                delfile(configSystem.configFolder .. "/" .. Config:Get() .. ".bat")
 
                 for i,v in pairs(listfiles(configSystem.configFolder)) do
                     if v:find(".bat") then
