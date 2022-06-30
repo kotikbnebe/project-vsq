@@ -28,9 +28,9 @@ library.theme = {
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
     backgroundcolor = Color3.fromRGB(20, 20, 20),
     tabstextcolor = Color3.fromRGB(240, 240, 240),
-    bordercolor = Color3.fromRGB(60, 60, 60),
-    accentcolor = Color3.fromRGB(28, 56, 139),
-    accentcolor2 = Color3.fromRGB(16, 31, 78),
+    bordercolor = Color3.fromRGB(0, 255, 0),
+    accentcolor = Color3.fromRGB(0, 255, 0),
+    accentcolor2 = Color3.fromRGB(0, 255, 0),
     outlinecolor = Color3.fromRGB(60, 60, 60),
     outlinecolor2 = Color3.fromRGB(0, 0, 0),
     sectorcolor = Color3.fromRGB(30, 30, 30),
@@ -3408,17 +3408,17 @@ function library:CreateWindow(name, size, hidebutton)
             configSystem.sector = tab:CreateSector("Configs", side or "left")
 
             local ConfigName = configSystem.sector:AddTextbox("Config Name", "", ConfigName, function() end, "")
-            local default = tostring(listfiles(configSystem.configFolder)[1] or ""):gsub(configSystem.configFolder .. "\\", ""):gsub(".bat", "")
+            local default = tostring(listfiles(configSystem.configFolder)[1] or ""):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", "")
             local Config = configSystem.sector:AddDropdown("Configs", {}, default, false, function() end, "")
             for i,v in pairs(listfiles(configSystem.configFolder)) do
-                if v:find(".bat") then
-                    Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".bat", ""))
+                if v:find(".txt") then
+                    Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
                 end
             end
 
             configSystem.Create = configSystem.sector:AddButton("Create", function()
                 for i,v in pairs(listfiles(configSystem.configFolder)) do
-                    Config:Remove(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".bat", ""))
+                    Config:Remove(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
                 end
 
                 if ConfigName:Get() and ConfigName:Get() ~= "" then
@@ -3438,11 +3438,11 @@ function library:CreateWindow(name, size, hidebutton)
                         end
                     end
     
-                    writefile(configSystem.configFolder .. "/" .. ConfigName:Get() .. ".bat", httpservice:JSONEncode(config))
+                    writefile(configSystem.configFolder .. "/" .. ConfigName:Get() .. ".txt", httpservice:JSONEncode(config))
     
                     for i,v in pairs(listfiles(configSystem.configFolder)) do
-                        if v:find(".bat") then
-                            Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".bat", ""))
+                        if v:find(".txt") then
+                            Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
                         end
                     end
                 end
@@ -3465,15 +3465,15 @@ function library:CreateWindow(name, size, hidebutton)
                         end
                     end
     
-                    writefile(configSystem.configFolder .. "/" .. Config:Get() .. ".bat", httpservice:JSONEncode(config))
+                    writefile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt", httpservice:JSONEncode(config))
                 end
             end)
 
             configSystem.Load = configSystem.sector:AddButton("Load", function()
-                local Success = pcall(readfile, configSystem.configFolder .. "/" .. Config:Get() .. ".bat")
+                local Success = pcall(readfile, configSystem.configFolder .. "/" .. Config:Get() .. ".txt")
                 if (Success) then
                     pcall(function() 
-                        local ReadConfig = httpservice:JSONDecode(readfile(configSystem.configFolder .. "/" .. Config:Get() .. ".bat"))
+                        local ReadConfig = httpservice:JSONDecode(readfile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt"))
                         local NewConfig = {}
     
                         for i,v in pairs(ReadConfig) do
@@ -3509,16 +3509,16 @@ function library:CreateWindow(name, size, hidebutton)
 
             configSystem.Delete = configSystem.sector:AddButton("Delete", function()
                 for i,v in pairs(listfiles(configSystem.configFolder)) do
-                    Config:Remove(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".bat", ""))
+                    Config:Remove(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
                 end
 
                 if (not Config:Get() or Config:Get() == "") then return end
-                if (not isfile(configSystem.configFolder .. "/" .. Config:Get() .. ".bat")) then return end
-                delfile(configSystem.configFolder .. "/" .. Config:Get() .. ".bat")
+                if (not isfile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt")) then return end
+                delfile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt")
 
                 for i,v in pairs(listfiles(configSystem.configFolder)) do
-                    if v:find(".bat") then
-                        Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".bat", ""))
+                    if v:find(".txt") then
+                        Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
                     end
                 end
             end)
