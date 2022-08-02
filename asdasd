@@ -42,6 +42,7 @@ function notify(title,text,time)
         Duration = time;
     })
 end
+for i = 1, 100 do
 local TeleportService = game:GetService'TeleportService'
 local Players = game:GetService'Players'
 local HttpService = game:GetService'HttpService'
@@ -63,3 +64,4 @@ local httprequest = (syn and syn.request) or http and http.request or http_reque
 			return notify("Shop", "Couldn't find a server.", 3)
 		end
 	end
+end
