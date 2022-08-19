@@ -77,9 +77,9 @@ local library = {
     open = false;
     opening = false;
     hasInit = false;
-    cheatname = 'digihaxx';
-    gamename = 'pf';
-    fileext = '.txt';
+    cheatname = startupArgs.cheatname or 'god is good';
+    gamename = startupArgs.gamename or 'god is great';
+    fileext = startupArgs.fileext or '.txt';
 }
 
 library.defaultTheme = {
