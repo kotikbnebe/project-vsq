@@ -26,6 +26,12 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+local args = {
+    [1] = "KOTIKBNEBE GOT KILL SCRIPT, BYE BYE SOUL OPS! .gg/z5N9qZVy5x DM !kotikbnebe 5132 TO GET THE SCRIPT",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 end
 function notify(title,text,time)
     game.StarterGui:SetCore("SendNotification", {
