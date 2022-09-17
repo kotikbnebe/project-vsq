@@ -58,7 +58,7 @@ local library = {
         ['colorpicker'] = 1100;
         ['watermark'] = 1300;
         ['notification'] = 1400;
-        ['cursor'] = nil;
+        ['cursor'] = 0;
     },
     stats = {
         ['fps'] = 0;
