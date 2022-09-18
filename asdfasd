@@ -4857,7 +4857,7 @@ function library:CreateSettingsTab(menu)
             end
         end
         setByPreset = false
-    end}):Select('Default');
+    end}):Select('Nekocheat Blue');
 
     for i, v in pairs(library.theme) do
         themeSection:AddColor({text = i, flag = i, color = library.theme[i], callback = function(c3)
