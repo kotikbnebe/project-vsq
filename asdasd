@@ -40,26 +40,3 @@ function notify(title,text,time)
         Duration = time;
     })
 end
-for i = 1, 100 do
-local TeleportService = game:GetService'TeleportService'
-local Players = game:GetService'Players'
-local HttpService = game:GetService'HttpService'
-local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
-    if httprequest then
-		local servers = {}
-		local req = httprequest({Url = string.format('https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100', game.PlaceId)})
-		local body = HttpService:JSONDecode(req.Body)
-		if body and body.data then
-			for i, v in next, body.data do
-				if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers then
-					table.insert(servers, 1, v.id)
-				end 
-			end
-		end
-		if #servers > 0 then
-			TeleportService:TeleportToPlaceInstance(game.PlaceId, servers[math.random(1, #servers)], Players.LocalPlayer)
-		else
-			return notify("Shop", "Couldn't find a server.", 3)
-		end
-	end
-end
