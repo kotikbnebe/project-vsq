@@ -4828,7 +4828,7 @@ function library:CreateSettingsTab(menu)
                 break
             end
         end
-    end}):Select('Nekocheat Blue');
+    end}):Select('Fatality');
 
     return settingsTab;
 end
