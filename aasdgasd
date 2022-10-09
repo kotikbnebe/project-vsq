@@ -1,8 +1,0 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/kotikbnebe/project-vsq/main/cat%20gui%20for%20me", true))()
-local window = Library:CreateWindow("V6 Crack ", Vector3.new(492, 598), Enum.KeyCode.RightShift)
-
-local NpcsTab = window:CreateTab("Npcs")
-local KillSector = NpcsTab:CreateSector("Kill npcs", "left")
-KillSector:AddButton("Nig ( Kill ) chara/boss", function()
-game.Players.LocalPlayer:Kick('Wrong button!')
-end)
