@@ -1,21 +1,7 @@
---[[
-
-    Library Made for https://octohook.xyz/
-    Developed by liam#4567
-
-    Ik this code is really shit in some places lol
-    will rewrite again i was just using some rly old stuff that i was lazy to rewrite
-    could've been a lot better and more optimized in some places and some things arent done as they should've been
-    got lazy when trying to make disable all roblox input when ui is open sooo that will be added later =)
-
-]]
-
--- // Load
-
 local startupArgs = ({...})[1] or {}
 
-if library then
-    library:Unload();
+if getgenv().library ~= nil then
+    getgenv().library:Unload();
 end
 
 if not game:IsLoaded() then
@@ -66,50 +52,28 @@ local library = {
         ['ping'] = 0;
     };
     images = {
-        ['gradientp90'] = 'https://raw.githubusercontent.com/portallol/luna/main/modules/gradient90.png';
-        ['gradientp45'] = 'https://raw.githubusercontent.com/portallol/luna/main/modules/gradient45.png';
-        ['colorhue'] = 'https://raw.githubusercontent.com/portallol/luna/main/modules/lgbtqshit.png';
-        ['colortrans'] = 'https://raw.githubusercontent.com/portallol/luna/main/modules/trans.png';
+        ['gradientp90'] = 'https://raw.githubusercontent.com/zuvvymwa/octopngs/main/octohook-main/images/gradientp90.png';
+        ['gradientp45'] = 'https://raw.githubusercontent.com/zuvvymwa/octopngs/main/octohook-main/images/gradientP45.png';
+        ['colorhue'] = 'https://raw.githubusercontent.com/zuvvymwa/octopngs/main/octohook-main/images/hue.png';
+        ['colorsat1'] = 'https://t5.rbxcdn.com/b6ce2f465dbe0ca4bf88d45ac4be1362';
+        ['colorsat2'] = 'https://t4.rbxcdn.com/0c51aa9d7f2ede5c635c2f44f66be88f';
+        ['colortrans'] = 'https://raw.githubusercontent.com/zuvvymwa/octopngs/main/octohook-main/images/transparency.png';
     };
     numberStrings = {['Zero'] = 0, ['One'] = 1, ['Two'] = 2, ['Three'] = 3, ['Four'] = 4, ['Five'] = 5, ['Six'] = 6, ['Seven'] = 7, ['Eight'] = 8, ['Nine'] = 9};
-    signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/alingiaer/DxHookLib/main/signal.lua'))();
+    signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/LSUDEV/LSU-Public/main/Utils/signalrewrite.lua'))();
     open = false;
     opening = false;
     hasInit = false;
-    cheatname = startupArgs.cheatname or 'ukraine is';
-    gamename = startupArgs.gamename or 'shit';
+    cheatname = startupArgs.cheatname or 'parasha';
+    gamename = startupArgs.gamename or '.dick';
     fileext = startupArgs.fileext or '.lua';
 }
+
+
 
 library.themes = {
     {
         name = 'Default',
-        theme = {
-            ['Accent']                    = fromrgb(52, 201, 235);
-            ['Background']                = fromrgb(15,15,15);
-            ['Border']                    = fromrgb(0,0,0);
-            ['Border 1']                  = fromrgb(60,60,60);
-            ['Border 2']                  = fromrgb(25,25,25);
-            ['Border 3']                  = fromrgb(10,10,10);
-            ['Primary Text']              = fromrgb(235,235,235);
-            ['Group Background']          = fromrgb(25,25,25);
-            ['Selected Tab Background']   = fromrgb(25,25,25);
-            ['Unselected Tab Background'] = fromrgb(15,15,15);
-            ['Selected Tab Text']         = fromrgb(245,245,245);
-            ['Unselected Tab Text']       = fromrgb(145,145,145);
-            ['Section Background']        = fromrgb(15,15,15);
-            ['Option Text 1']             = fromrgb(245,245,245);
-            ['Option Text 2']             = fromrgb(195,195,195);
-            ['Option Text 3']             = fromrgb(145,145,145);
-            ['Option Border 1']           = fromrgb(50,50,50);
-            ['Option Border 2']           = fromrgb(0,0,0);
-            ['Option Background']         = fromrgb(25,25,25);
-            ["Risky Text"]                = fromrgb(175, 21, 21);
-            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
-        }
-    },
-    {
-        name = 'Tokyo Night',
         theme = {
             ['Accent']                    = fromrgb(103,89,179);
             ['Background']                = fromrgb(22,22,31);
@@ -132,6 +96,33 @@ library.themes = {
             ['Option Background']         = fromrgb(24,25,37);
             ["Risky Text"]                = fromrgb(175, 21, 21);
             ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+        }
+    },
+    {
+        name = 'Octohook',
+        theme = {
+            ['Accent']                    = fromrgb(255,255,255);
+            ['Background']                = fromrgb(18,18,18);
+            ['Border']                    = fromrgb(0,0,0);
+            ['Border 1']                  = fromrgb(60,60,60);
+            ['Border 2']                  = fromrgb(35,35,35);
+            ['Border 3']                  = fromrgb(10,10,10);
+            ['Primary Text']              = fromrgb(235,235,235);
+            ['Group Background']          = fromrgb(35,35,35);
+            ['Selected Tab Background']   = fromrgb(35,35,35);
+            ['Unselected Tab Background'] = fromrgb(18,18,18);
+            ['Selected Tab Text']         = fromrgb(245,245,245);
+            ['Unselected Tab Text']       = fromrgb(145,145,145);
+            ['Section Background']        = fromrgb(18,18,18);
+            ['Option Text 1']             = fromrgb(245,245,245);
+            ['Option Text 2']             = fromrgb(195,195,195);
+            ['Option Text 3']             = fromrgb(145,145,145);
+            ['Option Border 1']           = fromrgb(50,50,50);
+            ['Option Border 2']           = fromrgb(0,0,0);
+            ['Option Background']         = fromrgb(35,35,35);
+            ["Risky Text"]                = fromrgb(175, 21, 21);
+            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+
         }
     },
     {
@@ -288,6 +279,7 @@ local whitelistedBoxKeys = {
     Enum.KeyCode.Seven,
     Enum.KeyCode.Eight,
     Enum.KeyCode.Nine,
+    Enum.KeyCode.Period
 }
 
 local keyNames = {
@@ -691,9 +683,6 @@ function library:Unload()
     end
     table.clear(self.drawings)
     getgenv().library = nil
-    if esp then
-        esp:unload()
-    end
 end
 
 function library:init()
@@ -799,10 +788,8 @@ function library:init()
     end
 
     for i,v in next, self.images do
-        if not isfile(self.cheatname..'/assets/'..i..'.oh') then
-            writefile(self.cheatname..'/assets/'..i..'.oh', game:HttpGet(v))
-        end
-        self.images[i] = readfile(self.cheatname..'/assets/'..i..'.oh');
+
+        self.images[i] = readfile(self.cheatname..'/assets/'..i..'.lx');
     end
 
     self.cursor1 = utility:Draw('Triangle', {Filled = true, Color = fromrgb(255,255,255), ZIndex = self.zindexOrder.cursor});
@@ -812,13 +799,16 @@ function library:init()
         self.cursor2.Visible = self.open
         if self.cursor1.Visible then
             local pos = inputservice:GetMouseLocation();
+	    inputservice.MouseIconEnabled = false
             self.cursor1.PointA = pos;
             self.cursor1.PointB = pos + newVector2(16,5);
             self.cursor1.PointC = pos + newVector2(5,16);
             self.cursor2.PointA = self.cursor1.PointA + newVector2(0, 0)
             self.cursor2.PointB = self.cursor1.PointB + newVector2(1, 1)
             self.cursor2.PointC = self.cursor1.PointC + newVector2(1, 1)
-        end
+	else
+	    inputservice.MouseIconEnabled = true
+	end
     end
 
     local screenGui = Instance.new('ScreenGui');
@@ -908,7 +898,7 @@ function library:init()
             if library.CurrentTooltip ~= nil then
                 local mousePos = inputservice:GetMouseLocation()
                 tooltipObjects.background.Position = UDim2.new(0,mousePos.X + 15,0,mousePos.Y + 15)
-                tooltipObjects.background.Size = UDim2.new(0,tooltipObjects.text.TextBounds.X + 6,0,tooltipObjects.text.TextBounds.Y + 2)
+                tooltipObjects.background.Size = UDim2.new(0,tooltipObjects.text.TextBounds.X + 6 + (library.CurrentTooltip.risky and 60 or 0),0,tooltipObjects.text.TextBounds.Y + 2)
             end
 
             local hoverObj = utility:GetHoverObject();
@@ -1087,7 +1077,7 @@ function library:init()
         local indicator = {
             title = data.title or 'indicator',
             enabled = data.enabled or false,
-            position = data.position or newUDim2(0,15,0,300),
+            position = data.position or newUDim2(0,55,0,300),
             values = {},
             objects = {valueObjects = {}},
             spacing = '   ',
@@ -1979,12 +1969,16 @@ function library:init()
         local function tooltip(option)
             utility:Connection(option.objects.holder.MouseEnter, function()
                 tooltipObjects.background.Visible = (not (option.tooltip == '' or option.tooltip == nil)) and true or false;
-                tooltipObjects.text.Text = (option.risky and '[RISKY] ' or '')..tostring(option.tooltip);
+                tooltipObjects.riskytext.Visible = option.risky;
+                tooltipObjects.text.Position = option.risky and newUDim2(0,60,0,0) or newUDim2(0,3,0,0)
+                tooltipObjects.text.Text = tostring(option.tooltip);
                 library.CurrentTooltip = option;
             end)
             utility:Connection(option.objects.holder.MouseLeave, function()
-                library.CurrentTooltip = nil;
-                tooltipObjects.background.Visible = false
+                if library.CurrentTooltip == option then
+                    library.CurrentTooltip = nil;
+                    tooltipObjects.background.Visible = false
+                end
             end)
         end
 
@@ -4570,6 +4564,18 @@ function library:init()
             Outline = true;
             Parent = tooltipObjects.background;
         })
+
+        tooltipObjects.riskytext = utility:Draw('Text', {
+            Position = UDim2.new(0,3,0,0);
+            ThemeColor = 'Risky Text Enabled';
+            Text = '[RISKY]';
+            Size = 13;
+            Font = 2;
+            ZIndex = z+1;
+            Outline = true;
+            Parent = tooltipObjects.background;
+        })
+
     end
     
     -- Watermark
@@ -4694,10 +4700,10 @@ function library:init()
         end
     end)
 
-    self.keyIndicator = self.NewIndicator({title = 'Keybinds', pos = newUDim2(0,15,0,325), enabled = false});
+    self.keyIndicator = self.NewIndicator({title = 'Keybinds', pos = UDim2.new(0,0.5,35,0), enabled = false});
+    self:SetTheme(library.theme);
     self:SetOpen(true);
     self.hasInit = true
-    self:SendNotification(self.cheatname..' | ui initalized', 5);
 
 end
 
@@ -4741,7 +4747,7 @@ function library:CreateSettingsTab(menu)
 
     refreshConfigs()
 
-    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
+    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.BackSlash, callback = function()
         library:SetOpen(not library.open)
     end});
 
@@ -4760,7 +4766,7 @@ function library:CreateSettingsTab(menu)
         end
     end})
 
-    mainSection:AddButton({text = 'Join Discord', confirm = true, callback = function(bool)
+    mainSection:AddButton({text = 'Join Discord', flag = 'joindiscord', confirm = true, callback = function()
         local res = syn.request({
 			Url = 'http://127.0.0.1:6463/rpc?v=1',
 			Method = 'POST',
@@ -4771,16 +4777,16 @@ function library:CreateSettingsTab(menu)
 			Body = game:GetService('HttpService'):JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = 'gCfdM2nHWE'}
+				args = {code = 'jVK9WeWuDb'}
 			})
 		})
         if res.Success then
-            library:SendNotification('optic.xyz | joined discord', 3);
+            library:SendNotification(library.cheatname..' | joined discord', 3);
         end
     end})
 
-    mainSection:AddButton({text = 'Copy Discord', callback = function()
-        setclipboard("https://discord.gg/gCfdM2nHWE")
+    mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
+        setclipboard('discord.gg/jVK9WeWuDb')
     end})
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
@@ -4801,10 +4807,10 @@ function library:CreateSettingsTab(menu)
     mainSection:AddSlider({text = 'Position Y', flag = 'keybind_indicator_y', min = 0, max = 100, increment = .1, value = 35, callback = function()
         library.keyIndicator:SetPosition(newUDim2(library.flags.keybind_indicator_x / 100, 0, library.flags.keybind_indicator_y / 100, 0));    
     end});
-
+    library.keyIndicator:SetPosition(newUDim2(0.5 / 100, 0, 35 / 100, 0));
     mainSection:AddSeparator({text = 'Watermark'})
     mainSection:AddToggle({text = 'Enabled', flag = 'watermark_enabled'});
-    mainSection:AddList({text = 'Position', flag = 'watermark_pos', selected = 'Custom', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
+    mainSection:AddList({text = 'Position', flag = 'watermark_pos', selected = 'Top Left', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
         library.watermark.lock = val;
     end})
     mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
