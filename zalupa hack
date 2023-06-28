@@ -1,5 +1,5 @@
-_G.ESP = false
-_G.ESPColor = Color3.fromRGB(255, 255, 255)
+getgenv().ESP = false
+getgenv().ESPColor = Color3.fromRGB(255, 255, 255)
 
 pcall(
     function()
@@ -11,7 +11,7 @@ pcall(
                     if not part:FindFirstChild("Highlight") then
                         highlight.FillTransparency = 1
                         highlight:Clone().Parent = part
-                        highlight.OutlineColor = _G.ESPColor
+                        highlight.OutlineColor = getgenv().ESPColor
                     end
                 end
 
@@ -39,7 +39,7 @@ local b = w:CreateFolder("dick cock nigger")
 b:Toggle(
     "enable zalupa wh",
     function(bool)
-        _G.ESP = bool
+        getgenv().ESP = bool
     end
 )
 
@@ -47,6 +47,6 @@ b:ColorPicker(
     "cvet xuyni",
     Color3.fromRGB(255, 255, 255),
     function(color)
-        _G.ESPColor = color
+        getgenv().ESPColor = color
     end
 )
