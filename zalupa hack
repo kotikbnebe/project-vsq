@@ -1,0 +1,52 @@
+_G.ESP = false
+_G.ESPColor = Color3.fromRGB(255, 255, 255)
+
+pcall(
+    function()
+        local highlight = Instance.new("Highlight")
+
+        game:GetService("RunService").RenderStepped:Connect(
+            function()
+                local function applyHighlight(part)
+                    if not part:FindFirstChild("Highlight") then
+                        highlight.FillTransparency = 1
+                        highlight:Clone().Parent = part
+                        highlight.OutlineColor = _G.ESPColor
+                    end
+                end
+
+                local function searchAndApplyHighlight(parent)
+                    for _, descendant in ipairs(parent:GetDescendants()) do
+                        if descendant:IsA("MeshPart") and (descendant.Name:lower() == "head" or descendant.Name:lower() == "torso") then
+                            applyHighlight(descendant)
+                        end
+                    end
+                end
+
+                searchAndApplyHighlight(game.Workspace.characters)
+            end
+        )
+    end
+)
+
+local library =
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3")))()
+
+local w = library:CreateWindow("pizda hack")
+
+local b = w:CreateFolder("dick cock nigger")
+
+b:Toggle(
+    "enable zalupa wh",
+    function(bool)
+        _G.ESP = bool
+    end
+)
+
+b:ColorPicker(
+    "cvet xuyni",
+    Color3.fromRGB(255, 255, 255),
+    function(color)
+        _G.ESPColor = color
+    end
+)
