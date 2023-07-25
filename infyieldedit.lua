@@ -11930,11 +11930,33 @@ addcmd('tpunanchored',{'tpua'},function(args, speaker)
 			local Forces = {}
 			for _,part in pairs(workspace:GetDescendants()) do
 				if Players[v].Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(speaker.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
-					for i,c in pairs(part:GetChildren()) do
-						if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
-							c:Destroy()
+					for i,x in pairs(part:GetChildren()) do
+						if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then
+							x:Destroy()
 						end
 					end
+		        if part:FindFirstChild("Attachment") then
+            part:FindFirstChild("Attachment"):Destroy()
+        end
+        if part:FindFirstChild("AlignPosition") then
+            part:FindFirstChild("AlignPosition"):Destroy()
+        end
+        if part:FindFirstChild("Torque") then
+            part:FindFirstChild("Torque"):Destroy()
+        end
+		part.CanCollide = false
+		local v = part
+		        local Torque = Instance.new("Torque", v)
+        Torque.Torque = Vector3.new(100000, 100000, 100000)
+        local AlignPosition = Instance.new("AlignPosition", v)
+        local Attachment2 = Instance.new("Attachment", v)
+        Torque.Attachment0 = Attachment2
+        AlignPosition.MaxForce = 9999999999999999
+        AlignPosition.MaxVelocity = math.huge
+        AlignPosition.Responsiveness = 200
+        AlignPosition.Attachment0 = Attachment2 
+        AlignPosition.Attachment1 = Attachment1
+		
 					local ForceInstance = Instance.new("BodyPosition")
 					ForceInstance.Parent = part
 					ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
